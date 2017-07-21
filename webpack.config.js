@@ -2,10 +2,10 @@ const path = require('path')
 
 module.exports = {
   context: path.join(__dirname, './'),
-  entry: './app/index.js',
+  entry: './src/app.js',
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'index.html'
+    filename: 'app.js'
   },
   resolve: {
     extensions: ['.js']
