@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "start": "sirv public"
+    "start": "rollup -c && sirv public"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
