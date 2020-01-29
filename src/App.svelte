@@ -6,7 +6,7 @@
 	<h1>Hello {name}, welcome to Svelte!</h1>
 	<p><a href="https://glitch.com/edit/#!/svelte">Remix this on Glitch</a> and visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   
-  <div class="glitchButton"></div>
+  <div class="glitchButton" style="position:absolute;top:20px;right:20px;"></div>
 </main>
 
 <style>
