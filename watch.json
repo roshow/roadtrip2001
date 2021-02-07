@@ -1,18 +1,10 @@
 {
   "install": {
-    "include": [
-      "^package\\.json$",
-      "^\\.env$"
-    ]
+    "include": ["^package\\.json$", "^\\.env$"]
   },
   "restart": {
-    "exclude": [
-      "^public/build"
-    ],
-    "include": [
-      "\\.js$",
-      "\\.svelte"
-    ]
+    "exclude": ["^public/build"],
+    "include": ["\\.js$", "\\.svelte"]
   },
   "throttle": 100
 }
