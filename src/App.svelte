@@ -7,7 +7,8 @@
         center: [38, -82],
         zoom: 5,
     };
-    const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    // const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    const tileUrl = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
     const tileLayerOptions = {
         minZoom: 0,
         maxZoom: 20,
@@ -19,8 +20,12 @@
   
     for (let i = 0, l = locations.length - 1; i < l; i++) {
       const loc = locations[i];
-      const
-      const day = (new Date())
+      const dest = locations[i + 1];
+      const day = (new Date(dest.date) - new Date(locations[0].date)) / (24 * 60 * 60 * 1000);
+      lines.push({
+        latLngs: [loc.latLng, dest.latLng],
+        color: twentycolors[day],
+      });
     }
   
 
@@ -32,6 +37,9 @@
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
         {#each locations as loc}
           <Marker latLng={loc.latLng} />
+        {/each}
+        {#each lines as line}
+          <Polyline {...line} />
         {/each}
     </LeafletMap>
 </div>
