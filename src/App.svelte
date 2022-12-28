@@ -1,11 +1,11 @@
 <script>
-    import {LeafletMap, Marker, Polyline, TileLayer} from 'svelte-leafletjs';
+    import {LeafletMap, Marker, Polyline, Popup, TileLayer} from 'svelte-leafletjs';
     import locations from './locations';
     import twentycolors from './twentycolors';
   
     const mapOptions = {
         center: [38, -82],
-        zoom: 5,
+        zoom: 6,
     };
     // const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
     const tileUrl = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
@@ -35,6 +35,16 @@
 <div class="example">
     <LeafletMap bind:this={leafletMap} options={mapOptions}>
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
+        {#each locations as loc}
+          <Marker latLng={loc.latLng}>
+            <Popup>
+              <h3>{loc.date}/2001</h3>
+              <h3>{loc.address}</h3>
+              <p>{loc.city}, {loc.state}</p>
+              {#if loc.notes}<p>Notes: {loc.notes}</p>{/if}
+            </Popup>
+          </Marker>
+        {/each}
         {#each lines as line}
           <Polyline {...line} />
         {/each}
