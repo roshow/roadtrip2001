@@ -1,5 +1,5 @@
 <script>
-    import {LeafletMap, Marker, Polyline, Popup, TileLayer} from 'svelte-leafletjs';
+    import {LeafletMap, Marker, Polyline, Popup, DivIcon, TileLayer} from 'svelte-leafletjs';
     import locations from './locations';
     import twentycolors from './twentycolors';
   
@@ -37,6 +37,10 @@
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
         {#each locations as loc}
           <Marker latLng={loc.latLng}>
+            <DivIcon>
+              <div class="marker">
+              </div>
+            </DivIcon>
             <Popup>
               <h3>{loc.date}/2001</h3>
               <h3>{loc.address}</h3>
@@ -55,5 +59,11 @@
   .example {
     width: 100%;
     height: 100vh;
+  }
+  .marker {
+    background: hotpink;
+    height: 40px;
+    width: 40px;
+    
   }
 </style>
