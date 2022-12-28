@@ -35,9 +35,6 @@
 <div class="example">
     <LeafletMap bind:this={leafletMap} options={mapOptions}>
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
-        {#each locations as loc}
-          <Marker latLng={loc.latLng} />
-        {/each}
         {#each lines as line}
           <Polyline {...line} />
         {/each}
