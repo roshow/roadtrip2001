@@ -5,7 +5,7 @@ export default [
     city: "Red Bank",
     state: "NJ",
     notes: "",
-    coords: [40.34778, -74.0739281],
+    latLng: [40.34778, -74.0739281],
   },
   {
     date: "3/20",
@@ -13,7 +13,7 @@ export default [
     city: "Leonardo",
     state: "NJ",
     notes: "",
-    coords: [40.415197, -74.0571154],
+    latLng: [40.415197, -74.0571154],
   },
   {
     date: "3/20",
@@ -21,7 +21,7 @@ export default [
     city: "Danville",
     state: "PA",
     notes: "Katerman house",
-    coords: [40.96342, -76.6127329],
+    latLng: [40.96342, -76.6127329],
   },
   {
     date: "3/21",
@@ -29,7 +29,7 @@ export default [
     city: "Granville",
     state: "OH",
     notes: "Robertson house",
-    coords: [40.0681192, -82.5196037],
+    latLng: [40.0681192, -82.5196037],
   },
   {
     date: "3/22",
@@ -37,7 +37,7 @@ export default [
     city: "Columbus",
     state: "OH",
     notes: "",
-    coords: [39.9611755, -82.9987942],
+    latLng: [39.9611755, -82.9987942],
   },
   {
     date: "3/22",
@@ -45,7 +45,7 @@ export default [
     city: "Union",
     state: "KY",
     notes: "",
-    coords: [38.8888642, -84.7476118],
+    latLng: [38.8888642, -84.7476118],
   },
   {
     date: "3/22",
@@ -53,7 +53,7 @@ export default [
     city: "Louisville",
     state: "KY",
     notes: "",
-    coords: [38.2526647, -85.7584557],
+    latLng: [38.2526647, -85.7584557],
   },
   {
     date: "3/22",
@@ -61,7 +61,7 @@ export default [
     city: "Bardstown",
     state: "KY",
     notes: "",
-    coords: [37.8092279, -85.4669025],
+    latLng: [37.8092279, -85.4669025],
   },
   {
     date: "3/22",
@@ -69,7 +69,7 @@ export default [
     city: "Cave City",
     state: "KY",
     notes: "",
-    coords: [37.145001, -85.945262],
+    latLng: [37.145001, -85.945262],
   },
   {
     date: "3/23",
@@ -77,7 +77,7 @@ export default [
     city: "Metropolis",
     state: "IL",
     notes: "",
-    coords: [37.1511655, -88.7319979],
+    latLng: [37.1511655, -88.7319979],
   },
   {
     date: "3/23",
@@ -85,7 +85,7 @@ export default [
     city: "Nashville",
     state: "TN",
     notes: "",
-    coords: [36.1447034, -86.8026551],
+    latLng: [36.1447034, -86.8026551],
   },
   {
     date: "3/24",
@@ -93,7 +93,7 @@ export default [
     city: "Memphis",
     state: "TN",
     notes: "",
-    coords: [35.1495343, -90.0489801],
+    latLng: [35.1495343, -90.0489801],
   },
   {
     date: "3/24",
@@ -101,7 +101,7 @@ export default [
     city: "Leland",
     state: "MS",
     notes: "",
-    coords: [33.4053949, -90.8976007],
+    latLng: [33.4053949, -90.8976007],
   },
   {
     date: "3/25",
@@ -109,7 +109,7 @@ export default [
     city: "Rolling Fork",
     state: "MS",
     notes: "",
-    coords: [32.9065168, -90.8781567],
+    latLng: [32.9065168, -90.8781567],
   },
   {
     date: "3/25",
@@ -117,7 +117,7 @@ export default [
     city: "New Orleans",
     state: "LA",
     notes: "",
-    coords: [29.9510658, -90.0715323],
+    latLng: [29.9510658, -90.0715323],
   },
   {
     date: "3/26",
@@ -125,7 +125,7 @@ export default [
     city: "Montgomery",
     state: "AL",
     notes: "",
-    coords: [32.3792233, -86.3077368],
+    latLng: [32.3792233, -86.3077368],
   },
   {
     date: "3/26",
@@ -133,7 +133,7 @@ export default [
     city: "Birmingham",
     state: "AL",
     notes: "",
-    coords: [33.5185892, -86.8103567],
+    latLng: [33.5185892, -86.8103567],
   },
   {
     date: "3/27",
@@ -141,7 +141,7 @@ export default [
     city: "Anniston",
     state: "AL",
     notes: "",
-    coords: [33.6598257, -85.8316318],
+    latLng: [33.6598257, -85.8316318],
   },
   {
     date: "3/27",
@@ -149,7 +149,7 @@ export default [
     city: "Atlanta",
     state: "GA",
     notes: "",
-    coords: [33.748752, -84.3876845],
+    latLng: [33.748752, -84.3876845],
   },
   {
     date: "3/27",
@@ -157,7 +157,7 @@ export default [
     city: "Athens",
     state: "GA",
     notes: "",
-    coords: [33.9519347, -83.357567],
+    latLng: [33.9519347, -83.357567],
   },
   {
     date: "3/27",
@@ -165,7 +165,7 @@ export default [
     city: "Clemson",
     state: "SC",
     notes: "Meriwether house",
-    coords: [34.6834382, -82.8373654],
+    latLng: [34.6834382, -82.8373654],
   },
   {
     date: "3/28",
@@ -173,7 +173,7 @@ export default [
     city: "Hamer",
     state: "SC",
     notes: "",
-    coords: [34.497644, -79.309315],
+    latLng: [34.497644, -79.309315],
   },
   {
     date: "3/28",
@@ -181,7 +181,7 @@ export default [
     city: "Durham",
     state: "NC",
     notes: "",
-    coords: [36.0014258, -78.9382286],
+    latLng: [36.0014258, -78.9382286],
   },
   {
     date: "3/29",
@@ -189,7 +189,7 @@ export default [
     city: "Lexington",
     state: "VA",
     notes: "",
-    coords: [37.7898776, -79.4458935],
+    latLng: [37.7898776, -79.4458935],
   },
   {
     date: "3/30",
@@ -197,7 +197,7 @@ export default [
     city: "Washington",
     state: "DC",
     notes: "",
-    coords: [38.9076089, -77.0722585],
+    latLng: [38.9076089, -77.0722585],
   },
   {
     date: "3/31",
@@ -205,7 +205,7 @@ export default [
     city: "Jessup",
     state: "MD",
     notes: "",
-    coords: [39.1680042, -76.7898419],
+    latLng: [39.1680042, -76.7898419],
   },
   {
     date: "3/31",
@@ -213,7 +213,7 @@ export default [
     city: "Shrewsbury",
     state: "NJ",
     notes: "Reid house",
-    coords: [40.3295547, -74.0615285],
+    latLng: [40.3295547, -74.0615285],
   },
   {
     date: "4/1",
@@ -221,7 +221,7 @@ export default [
     city: "Red Bank",
     state: "NJ",
     notes: "",
-    coords: [40.3499727, -74.0651951],
+    latLng: [40.3499727, -74.0651951],
   },
   {
     date: "4/1",
@@ -229,6 +229,6 @@ export default [
     city: "Williamstown",
     state: "MA",
     notes: "",
-    coords: [42.7128843, -73.2031395],
+    latLng: [42.7128843, -73.2031395],
   },
 ];
