@@ -51,7 +51,7 @@
           </Marker>
         {/each}
         {#each lines as line}
-          <Polyline {...line} />
+          <Polyline latLngs={line.latLngs} color={line.color} />
         {/each}
     </LeafletMap>
 </div>
