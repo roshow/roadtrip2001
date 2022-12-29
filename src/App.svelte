@@ -2,7 +2,8 @@
     import {LeafletMap, Marker, Polyline, Popup, DivIcon, TileLayer} from 'svelte-leafletjs';
     import locations from './locations';
     import twentycolors from './twentycolors';
-  
+    import 'leaflet/dist/leaflet.css';
+
     const mapOptions = {
         center: [38, -82],
         zoom: 6,
@@ -18,10 +19,12 @@
   
     const lines = [];
   
+    const date
+  
     for (let i = 0, l = locations.length - 1; i < l; i++) {
       const loc = locations[i];
       const dest = locations[i + 1];
-      const day = (new Date(dest.date) - new Date(locations[0].date)) / (24 * 60 * 60 * 1000);
+      const day = (new Date(`${dest.date}/01`) - new Date("3/20/01")) / 86400000;
       lines.push({
         latLngs: [loc.latLng, dest.latLng],
         color: twentycolors[day],
