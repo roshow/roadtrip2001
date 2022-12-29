@@ -17,14 +17,13 @@
         attribution: "© OpenStreetMap contributors",
     };
   
+    const startDate = new Date(`${locations[0].date}/01`);
     const lines = [];
-  
-    const date
-  
+
     for (let i = 0, l = locations.length - 1; i < l; i++) {
       const loc = locations[i];
       const dest = locations[i + 1];
-      const day = (new Date(`${dest.date}/01`) - new Date("3/20/01")) / 86400000;
+      const day = (new Date(`${dest.date}/01`) - startDate) / 86400000;
       lines.push({
         latLngs: [loc.latLng, dest.latLng],
         color: twentycolors[day],
@@ -38,23 +37,23 @@
 <div class="example">
     <LeafletMap bind:this={leafletMap} options={mapOptions}>
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
-        {#each locations as loc, i}
-          <Marker latLng={loc.latLng}>
+        {#each locations as { latLng, date, address, city, state, notes }, i}
+          <Marker latLng={latLng}>
             <DivIcon>
               <div class="marker">
                 {i + 1}
               </div>
             </DivIcon>
             <Popup>
-              <h3>{loc.date}/2001</h3>
-              <h3>{loc.address}</h3>
-              <p>{loc.city}, {loc.state}</p>
-              {#if loc.notes}<p>Notes: {loc.notes}</p>{/if}
+              <h3>{date}/2001</h3>
+              <h3>{address}</h3>
+              <p>{city}, {state}</p>
+              {#if notes}<p>Notes: {notes}</p>{/if}
             </Popup>
           </Marker>
         {/each}
         {#each lines as line}
-          <Polyline latLngs={line.latLngs} color={line.color} />
+          <Polyline {...line}} />
         {/each}
     </LeafletMap>
 </div>
