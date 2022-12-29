@@ -35,10 +35,11 @@
 <div class="example">
     <LeafletMap bind:this={leafletMap} options={mapOptions}>
         <TileLayer url={tileUrl} options={tileLayerOptions}/>
-        {#each locations as loc}
+        {#each locations as loc, i}
           <Marker latLng={loc.latLng}>
             <DivIcon>
               <div class="marker">
+                {i + 1}
               </div>
             </DivIcon>
             <Popup>
@@ -61,9 +62,14 @@
     height: 100vh;
   }
   .marker {
-    background: hotpink;
-    height: 40px;
-    width: 40px;
-    
+    background: white;
+    box-sizing: border-box;
+    width: 30px;
+    top: -9px;
+    left: -9px;
+    position: relative;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 800;
   }
 </style>
