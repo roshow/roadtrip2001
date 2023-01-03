@@ -1,0 +1,37 @@
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
+const locations = require("../src/locations");
+
+const getpoints = async (origin, destination) => {
+  const res = await axios(
+    "https://maps.googleapis.com/maps/api/directions/json",
+    {
+      params: {
+        origin: origin.join(","),
+        destination: destination.join(","),
+        key: "AIzaSyAYBrhU58f-Zmv1eoGpQ6SpepUj_9rb3G0",
+      },
+    }
+  );
+  return res.data.routes[0].overview_polyline.points;
+};
+
+(async () => {
+  const updatedLocations = await Promise.all(
+    locations.map(async (loc, i) => {
+      if (i + 1 >= locations.length) return loc;
+      const polyline = await getpoints(loc.latLng, locations[i + 1].latLng);
+      return {
+        ...loc,
+        polyline,
+      };
+    })
+  );
+
+  fs.writeFileSync(
+    path.join(__dirname, "../src/updatedLocations.json"),
+    JSON.stringify(updatedLocations, null, 2),
+    () => {}
+  );
+})();

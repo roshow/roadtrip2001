@@ -1,1 +1,8 @@
 public/build
+node_modules
+.config
+.env
+.glitchdotcom.json
+.node-gyp
+.vscode
+src/updatedLocations.json
