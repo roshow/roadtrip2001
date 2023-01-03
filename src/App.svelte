@@ -6,11 +6,11 @@
     Popup,
     DivIcon,
     TileLayer,
-  } from "svelte-leafletjs";
-  import locations from "./locations";
-  import twentycolors from "./twentycolors";
-  import polylineEncoded from "polyline-encoded";
-  import "leaflet/dist/leaflet.css";
+  } from 'svelte-leafletjs';
+  import locations from './locations';
+  import twentycolors from './twentycolors';
+  import polylineEncoded from 'polyline-encoded';
+  import 'leaflet/dist/leaflet.css';
 
   const mapOptions = {
     center: [38, -82],
@@ -18,12 +18,12 @@
   };
   // const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   const tileUrl =
-    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const tileLayerOptions = {
     minZoom: 0,
     maxZoom: 20,
     maxNativeZoom: 19,
-    attribution: "© OpenStreetMap contributors",
+    attribution: '© OpenStreetMap contributors',
   };
 
   const startDate = new Date(`${locations[0].date}/01`);
