@@ -10,7 +10,7 @@ const getpoints = async (origin, destination) => {
       params: {
         origin: origin.join(','),
         destination: destination.join(','),
-        key: 'AIzaSyAYBrhU58f-Zmv1eoGpQ6SpepUj_9rb3G0',
+        key: process.env.MAP_API_KEY,
       },
     }
   );
