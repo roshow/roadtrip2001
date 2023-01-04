@@ -6,7 +6,7 @@ const fastify = require('fastify')({
 });
 
 // Setup our static files
-fastify.register(require('fastify-static'), {
+fastify.register(require('@fastify/static'), {
   root: path.join(__dirname, 'public'),
   prefix: '/', // optional: default '/'
 });

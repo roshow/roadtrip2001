@@ -7,17 +7,10 @@
     TileLayer,
     CircleMarker,
   } from 'svelte-leafletjs';
-  import rawLocations from './locations';
   import twentycolors from './twentycolors';
   import polylineEncoded from 'polyline-encoded';
+  import locations from './locations.json';
   import 'leaflet/dist/leaflet.css';
-
-  const locations = rawLocations.map((loc) => ({
-    ...loc,
-    day:
-      (new Date(`${loc.date}/01`) - new Date(`${rawLocations[0].date}/01`)) /
-      86400000,
-  }));
 
   const mapOptions = {
     center: [38, -82],
@@ -35,13 +28,14 @@
 
   const lines = [];
 
-  for (let i = 0, l = locations.length - 1; i < l; i++) {
+  for (let i = 0, l = locations.length; i < l; i++) {
     const loc = locations[i];
-    const dest = locations[i + 1];
-    lines.push({
-      latLngs: polylineEncoded.decode(loc.polyline),
-      color: twentycolors[dest.day],
-    });
+    if (loc.polyline) {
+      lines.push({
+        latLngs: polylineEncoded.decode(loc.polyline),
+        color: twentycolors[loc.day],
+      });
+    }
   }
 
   let leafletMap;
