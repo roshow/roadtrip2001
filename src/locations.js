@@ -287,7 +287,4 @@ module.exports = [
     notes: '',
     latLng: [42.7128843, -73.2031395],
   },
-].map((loc) => ({
-  ...loc,
-  day: (new Date(`${loc.date}/01`) - new Date('3/20/01')) / 86400000,
-}));
+];

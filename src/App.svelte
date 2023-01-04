@@ -4,14 +4,20 @@
     Marker,
     Polyline,
     Popup,
-    DivIcon,
     TileLayer,
     CircleMarker,
   } from 'svelte-leafletjs';
-  import locations from './locations';
+  import rawLocations from './locations';
   import twentycolors from './twentycolors';
   import polylineEncoded from 'polyline-encoded';
   import 'leaflet/dist/leaflet.css';
+
+  const locations = rawLocations.map((loc) => ({
+    ...loc,
+    day:
+      (new Date(`${loc.date}/01`) - new Date(`${rawLocations[0].date}/01`)) /
+      86400000,
+  }));
 
   const mapOptions = {
     center: [38, -82],
@@ -52,7 +58,7 @@
         {latLng}
         radius={10}
         color={twentycolors[day]}
-        fillColor="transparent"
+        fillColor={twentycolors[day]}
       >
         <Popup>
           <h3>{date}/2001</h3>
