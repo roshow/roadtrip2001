@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const locations = require('../src/locations');
+const locations = require('../src/locations.json');
 
 const startDate = new Date(locations[0].date);
 
@@ -9,8 +9,8 @@ const updated = [];
 for (let i = 0, l = locations.length; i < l; i++) {
   const loc = locations[i];
   const prev = updated[i - 1];
-  const day = (new Date(loc.date) - startDate) / 86400000 + 1;
-  let stop = !prev ? 0 : 1;
+  const day = (new Date(loc.date) - startDate) / 86400000;
+  let stop = 0;
   if (prev?.date === loc.date) {
     stop = prev.stop + 1;
   }

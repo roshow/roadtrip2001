@@ -45,7 +45,7 @@
   <LeafletMap bind:this={leafletMap} options={mapOptions}>
     <TileLayer url={tileUrl} options={tileLayerOptions} />
     {#each lines as line}
-      <Polyline {...line} } />
+      <Polyline {...line} />
     {/each}
     {#each locations as { latLng, date, address, city, state, notes, day }, i}
       <CircleMarker
