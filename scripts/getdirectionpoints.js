@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const locations = require('../src/locations');
+const locations = require('../src/locations.json');
 
 const getpoints = async (origin, destination) => {
   const res = await axios(
@@ -20,8 +20,8 @@ const getpoints = async (origin, destination) => {
 (async () => {
   const updatedLocations = await Promise.all(
     locations.map(async (loc, i) => {
-      if (i + 1 >= locations.length) return loc;
-      const polyline = await getpoints(loc.latLng, locations[i + 1].latLng);
+      if (i - 1 < 0) return loc;
+      const polyline = await getpoints(locations[i - 1].latLng, loc.latLng);
       return {
         ...loc,
         polyline,

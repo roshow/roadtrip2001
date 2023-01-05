@@ -47,7 +47,7 @@
     {#each lines as line}
       <Polyline {...line} />
     {/each}
-    {#each locations as { latLng, date, address, city, state, notes, day }, i}
+    {#each locations as { latLng, date, address, city, state, notes, day, pic }}
       <CircleMarker
         {latLng}
         radius={10}
@@ -55,6 +55,13 @@
         fillColor={twentycolors[day]}
       >
         <Popup>
+          {#if pic}
+            <img
+              src={`https://cdn.glitch.global/a5de7491-652b-44bf-8f2f-149875203e18/thumbnails%2F${pic}`}
+              alt={`${city}, ${state}`}
+              class="popup-img"
+            />
+          {/if}
           <h3>{date}/2001</h3>
           <h3>{address}</h3>
           <p>{city}, {state}</p>
@@ -70,15 +77,7 @@
     width: 100%;
     height: 100vh;
   }
-  .marker {
-    background: white;
-    box-sizing: border-box;
-    width: 30px;
-    top: -9px;
-    left: -9px;
-    position: relative;
-    border: 1px solid black;
-    text-align: center;
-    font-weight: 800;
+  .popup-img {
+    max-width: 300px;
   }
 </style>
